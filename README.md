@@ -75,3 +75,25 @@ To remove local containers and database data after testing, run:
 ```powershell
 docker compose down -v
 ```
+
+## Environment Variables
+
+The project relies on several environment variables defined in the `.env` file. Below is a brief description of each variable and its role. **Do not include actual values** (especially passwords or secrets) in the documentation.
+
+- `POSTGRES_DB` – Name of the PostgreSQL database used by Airflow.
+- `POSTGRES_USER` – Database user for PostgreSQL.
+- `POSTGRES_PASSWORD` – Password for the PostgreSQL user.
+- `POSTGRES_PORT` – Port on which PostgreSQL is exposed (used by Docker Compose).
+- `DB_HOST` – Hostname of the database. Inside Docker it should be `postgres`; when running locally it can be `localhost`.
+- `DB_PORT` – Port for connecting to PostgreSQL from the DAG (default `5432`).
+- `DB_NAME` – Database name (mirrors `POSTGRES_DB`).
+- `DB_USER` – Database user (mirrors `POSTGRES_USER`).
+- `DB_PASSWORD` – Database password (mirrors `POSTGRES_PASSWORD`).
+- `AIRFLOW_UID` – UID for the Airflow container to avoid permission issues.
+- `AIRFLOW_ADMIN_USERNAME` – Username for the Airflow UI admin account.
+- `AIRFLOW_ADMIN_PASSWORD` – Password for the Airflow UI admin account.
+- `AIRFLOW_ADMIN_EMAIL` – Email address for the Airflow admin user.
+- `SOURCE_FILE` – Path to the Excel workbook containing source data.
+- `SQL_DIR` – Directory where all external `.sql` files are stored (default `/opt/airflow/sql`).
+
+These variables are loaded automatically by Docker Compose and the Airflow DAG at runtime.
