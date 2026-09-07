@@ -1,8 +1,6 @@
 # Retail Financing ETL
 
-Core local ETL pipeline for the provided Excel workbook:
-
-`Excel workbook -> Bronze PostgreSQL tables -> Staging PostgreSQL tables -> Gold star schema`
+![Caption for the image](img/arsitektur.png)
 
 ## Overview
 
